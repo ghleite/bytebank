@@ -8,5 +8,4 @@ open class Employee(
         get() {
             return salary * 0.1
         }
-
 }
