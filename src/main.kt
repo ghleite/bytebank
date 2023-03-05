@@ -1,24 +1,20 @@
 fun main() {
-    println("Seja bem vindo ao Byte Bank")
+    val josephAccount = SavingAccount("joseph", 12345)
+    val saraAccount = CheckingAccount("sara", 12346)
 
-    val john = Employee(
-        name = "roberto",
-        cpf = "111.111.111-11",
-        salary = 1000.0
-    )
+    println("Joseph Account balance = ${josephAccount.balance}")
+    println("Sara Account balance = ${saraAccount.balance}")
 
-    println("nome: ${john.name}")
-    println("cpf: ${john.cpf}")
-    println("salary: ${john.salary} ")
-    println("bonfication: ${john.bonification}")
+    josephAccount.withdraw(20.0)
+    saraAccount.withdraw(10.0)
+
+    println("Joseph Account balance = ${josephAccount.balance}")
+    println("Sara Account balance = ${saraAccount.balance}")
+
+    josephAccount.transfer(100.0, saraAccount)
+
+    println("Joseph Account balance = ${josephAccount.balance}")
+    println("Sara Account balance = ${saraAccount.balance}")
 }
 
-fun validateBalance(balance: Double) {
-    when(balance) {
-        1.0 -> println("saldo é positivo")
-        0.0 -> println("sem saldo")
-        else -> {
-            println("saldo é negativo")
-        }
-    }
-}
+

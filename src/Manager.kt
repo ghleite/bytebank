@@ -9,5 +9,5 @@ class Manager(
     salary = salary
 ){
 
-    override val bonification: Double get() = salary * 0.1
+    override val bonification: Double get() = super.bonification + 100
 }

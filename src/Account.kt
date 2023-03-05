@@ -1,4 +1,4 @@
-class Account(var name: String, var accountNumber: Int) {
+open class Account(var name: String, var accountNumber: Int) {
 
     var balance = 0.0
         private set
@@ -7,7 +7,7 @@ class Account(var name: String, var accountNumber: Int) {
         this.balance += value
     }
 
-    fun withdraw(value: Double) {
+    open fun withdraw(value: Double) {
         this.balance -= value
     }
 
@@ -15,10 +15,8 @@ class Account(var name: String, var accountNumber: Int) {
         if(this.balance >= value) {
             this.balance -= value
             destiny.balance += value
-            println("tranferencia realizada com sucesso")
             return true
         } else {
-            println("transferencia falhou")
             return false
         }
     }
